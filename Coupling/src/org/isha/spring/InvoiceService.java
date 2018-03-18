@@ -1,8 +1,15 @@
 package org.isha.spring;
 
+
 public class InvoiceService {
-	public void raiseInsvoice(Invoice invoice) {
-		InvoicingDAOImpl dao = new InvoicingDAOImpl();
+	private InvoicingDAO dao;
+
+	public void setDao(InvoicingDAO dao) {
+		this.dao = dao;
+	}
+
+	public void raiseInvoice(Invoice invoice) {
+		InvoicingDAO dao = new InvoicingDAOImpl();
 		dao.save(invoice);
 	}
 }
