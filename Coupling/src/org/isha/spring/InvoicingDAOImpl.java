@@ -5,14 +5,14 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class InvoicingDAO {
+public class InvoicingDAOImpl {
 	private static final String INSERT_STMT = "insert into INVOICES(INVOICE_ID,CUSTOMER_NAME) "
 			+ "value(?,?)";
 	private static final String DRIVER_URL ="org.hsqldb.jdbcDriver";
 	private static final String DATABASE_URL ="jdbc:hsqldb:file:invoicedb.dat;shutdown=true;";
 	private static final String CREATE_STMT ="create table INVOICES(INVOICE_ID varchar(255),CUSTOMER_NAME varchar(255))";
 	
-	public InvoicingDAO() {
+	public InvoicingDAOImpl() {
 		try {
 			Class.forName(DRIVER_URL);
 			createTables();
